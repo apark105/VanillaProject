@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'open sans-bold'
+}
+
+.headers {
+    width: 100%; 
+    height: 15%;
+    padding: 3% 0 0% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab {
+    width: 180px;
+    height: 40px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.tabClicked {
+    color:white;
+    background-color: black; 
+}
+
+.infoBody {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#infoTab {
+    width: 60%;
+    text-align: center;
+}
+
+.fitGuide, .care, .materials {
+    display: none;
+}
+
+.showInfo {
+    display: block;
+}
+
+li > div {
+    font-size: 1.5rem;
+}
+
+.percentages {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    flex-direction: row;
+    padding: 0;
+    line-height: 1;
+}
+
+.dash {
+    width: 55px;
+    margin: 25px auto;
+    border-top: 1px solid black;
+}
