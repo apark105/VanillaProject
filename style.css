@@ -1,22 +1,23 @@
 body {
     margin: 0;
     width: 100vw;
-    height: 100vh;
+    overflow-x: hidden;
+    /* height: 100vh; */
     font-family: 'open sans-bold'
 }
 
 .headers {
     width: 100%; 
     height: 15%;
-    padding: 3% 0 0% 0;
+    padding: 5% 0 3% 0;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .tab {
-    width: 180px;
-    height: 40px;
+    width: 18vw;
+    height: 7vh;
     border: 1px solid black;
     display: flex;
     align-items: center;
@@ -36,7 +37,7 @@ body {
     width: 100%;
 }
 
-#infoTab {
+.infoTab {
     width: 60%;
     text-align: center;
 }
@@ -47,6 +48,13 @@ body {
 
 .showInfo {
     display: block;
+}
+
+li {
+    list-style-type: none;
+    width: 140px;
+    font-size: 3rem;
+    margin: 0;
 }
 
 li > div {
@@ -67,3 +75,24 @@ li > div {
     margin: 25px auto;
     border-top: 1px solid black;
 }
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .infoTab {
+        width: 85%;
+    }
+    #headers {
+        width: 100%;
+        flex-direction: column;
+        padding: 0 0 5% 0;
+    }
+    .tab {
+        width: 95%;
+        justify-content: flex-start;
+        padding-left: 5%;
+    }
+    .tabClicked {
+        color: inherit;
+        background-color: inherit;
+    }
+  }
