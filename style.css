@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
     margin: 0;
     width: 100vw;
     overflow-x: hidden;
-    /* height: 100vh; */
-    font-family: 'open sans-bold'
+    height: 100vh;
 }
 
 .headers {
@@ -12,19 +13,20 @@ body {
     padding: 2% 0 3% 0;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
 }
 
 .tab {
     width: 18vw;
-    height: 7vh;
+    height: 50px;
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Open Sans';
 }
 
 .tabClicked {
@@ -71,21 +73,34 @@ li > div {
     border-top: 1px solid black;
 }
 
+/* For mobile phones: */
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
     .tab {
         width: 95%;
-        justify-content: flex-start;
-        padding-left: 5%;
+        justify-content: space-between;
+        padding: 0 5% 0;
     }
     .tabClicked {
         color: inherit;
         background-color: inherit;
     }
-    .showInfo{
-        order: inherit;
-    }
     .fitGuide, .care, .materials {
         width: 90%;
+        max-height: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+        transition: max-height 0.3s ease-out;
+    }
+    .showInfo{
+        order: inherit;
+        max-height: 250px;
+        padding: 2.5% 0;
+    }
+    .tab:after {
+        content: '+';
+    }
+    .tabClicked:after {
+        content: "-";
     }
   }
