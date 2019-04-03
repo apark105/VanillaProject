@@ -94,7 +94,7 @@ li > div {
     }
     .showInfo{
         order: inherit;
-        max-height: 250px;
+        max-height: initial;
         padding: 2.5% 0;
     }
     .tab:after {
