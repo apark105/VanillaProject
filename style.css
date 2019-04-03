@@ -1,29 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 body {
     margin: 0;
     width: 100vw;
     overflow-x: hidden;
-    /* height: 100vh; */
-    font-family: 'open sans-bold'
+    height: 100vh;
 }
 
 .headers {
     width: 100%; 
     height: 15%;
-    padding: 5% 0 3% 0;
+    padding: 2% 0 3% 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
 }
 
 .tab {
     width: 18vw;
-    height: 7vh;
+    height: 50px;
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Open Sans';
 }
 
 .tabClicked {
@@ -31,23 +34,16 @@ body {
     background-color: black; 
 }
 
-.infoBody {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-.infoTab {
-    width: 60%;
-    text-align: center;
-}
-
 .fitGuide, .care, .materials {
     display: none;
+    width: 60%;
+    text-align: center;
+    padding: 2.5% 0 2.5% 0;
 }
 
 .showInfo {
     display: block;
+    order: 1;
 }
 
 li {
@@ -55,6 +51,7 @@ li {
     width: 140px;
     font-size: 3rem;
     margin: 0;
+    text-align: center;
 }
 
 li > div {
@@ -76,23 +73,34 @@ li > div {
     border-top: 1px solid black;
 }
 
+/* For mobile phones: */
 @media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    .infoTab {
-        width: 85%;
-    }
-    #headers {
-        width: 100%;
-        flex-direction: column;
-        padding: 0 0 5% 0;
-    }
     .tab {
         width: 95%;
-        justify-content: flex-start;
-        padding-left: 5%;
+        justify-content: space-between;
+        padding: 0 5% 0;
     }
     .tabClicked {
         color: inherit;
         background-color: inherit;
+    }
+    .fitGuide, .care, .materials {
+        width: 90%;
+        max-height: 0;
+        padding: 0;
+        overflow: hidden;
+        display: block;
+        transition: max-height 0.3s ease-out;
+    }
+    .showInfo{
+        order: inherit;
+        max-height: 250px;
+        padding: 2.5% 0;
+    }
+    .tab:after {
+        content: '+';
+    }
+    .tabClicked:after {
+        content: "-";
     }
   }
