@@ -8,14 +8,18 @@ function Tab() {
    */
   this.init = function () {
     var tab = document.querySelectorAll(".tab");
-    tab.forEach(function (selectTab) {
-      selectTab.addEventListener("click", _this.toggleTab);
-    });
+    for (var i = 0; i < tab.length; i++ ) {
+      tab[i].addEventListener("click", _this.toggleTab);
+    }
+    // tab.forEach(function (selectTab) {
+    //   selectTab.addEventListener("click", _this.toggleTab);
+    // });
   },
   /**
    * function toggles between tabs
    */
   this.toggleTab = function () {
+    console.log('did it work?')
     _this.closeTab();
     var currentTab = event.target;
     currentTab.classList.add("tabClicked");
