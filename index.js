@@ -2,28 +2,34 @@
 
 function Tab() {
   var _this = this;
-
+  var flag; 
+  var removeTab; 
+  var removeInfo; 
   /**
    * function selects and attaches click handlers to all tabs
    */
   this.init = function () {
     var tab = document.querySelectorAll(".tab");
-    for (var i = 0; i < tab.length; i++ ) {
+    for (var i = 0; i < tab.length; i++) {
       tab[i].addEventListener("click", _this.toggleTab);
     }
-    // tab.forEach(function (selectTab) {
-    //   selectTab.addEventListener("click", _this.toggleTab);
-    // });
   },
   /**
    * function toggles between tabs
    */
   this.toggleTab = function () {
-    console.log('did it work?')
     _this.closeTab();
     var currentTab = event.target;
     currentTab.classList.add("tabClicked");
     _this.showInfo(currentTab.id);
+
+    if(currentTab.id === flag){
+      removeTab.classList.remove("tabClicked");
+      removeInfo.classList.remove("showInfo");
+      flag = null;
+      return;
+    }
+    flag = currentTab.id;
   },
   /** 
    * function displays content based on the current tab
@@ -37,16 +43,17 @@ function Tab() {
    * function closes previously opened tab 
    */
   this.closeTab = function () {
-    var removeTab = document.querySelectorAll('.tabClicked')[0];
-    var removeInfo = document.querySelectorAll('.showInfo')[0];
-
+    removeTab = document.querySelectorAll('.tabClicked')[0];
+    removeInfo = document.querySelectorAll('.showInfo')[0];
     if (removeTab) {
       removeTab.classList.remove("tabClicked");
       removeInfo.classList.remove("showInfo");
     }
   };
 }
-
+/**
+ * function initialized upon window onload
+ */
 window.onload = function () {
   var individualTab = new Tab();
   individualTab.init();

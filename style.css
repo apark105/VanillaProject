@@ -52,7 +52,8 @@ body {
 }
 
 li {
-    list-style-type: none;
+    /* list-style-type: none; */
+    list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=);
     width: 157px;
     font-size: 3.27rem;
     margin: 0;
@@ -91,10 +92,13 @@ li > div {
         border-left: 0;
         border-right: 0; 
     }
+    .tab:nth-of-type(1), .tab:nth-of-type(3) {
+        border-bottom: none; 
+    } 
     .tabClicked {
+        border-bottom: none; 
         color: inherit;
         background-color: inherit;
-        border-bottom: none; 
     }
     .fitGuide, .care, .materials {
         width: 90%;
