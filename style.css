@@ -8,23 +8,24 @@ body {
 .headers {
     width: 100%; 
     height: 15%;
-    padding: 2% 0 3% 0;
+    padding: 5.25% 0 3% 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
 .tab {
-    width: 18vw;
-    height: 50px;
+    width: 180px;
+    height: 37px;
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 2.2px;
     font-family: 'Open Sans';
+    font-size: 18.5px;
 }
 
 .tabClicked {
@@ -36,7 +37,13 @@ body {
     display: none;
     width: 60%;
     text-align: center;
-    padding: 2.5% 0 2.5% 0;
+    padding: 2.9% 26% 2.5% 26%;
+    font-size: 16px;
+}
+
+.fitGuide, .care {
+    padding: 3.9% 26% 2.5% 26%;
+
 }
 
 .showInfo {
@@ -46,8 +53,8 @@ body {
 
 li {
     list-style-type: none;
-    width: 140px;
-    font-size: 3rem;
+    width: 157px;
+    font-size: 3.27rem;
     margin: 0;
     text-align: center;
 }
@@ -62,7 +69,7 @@ li > div {
     align-items: center; 
     flex-direction: row;
     padding: 0;
-    line-height: 1;
+    line-height: 0.95;
 }
 
 .dash {
@@ -73,14 +80,21 @@ li > div {
 
 /* For mobile phones: */
 @media only screen and (max-width: 768px) {
+    .headers{
+        padding: 0;
+    }
     .tab {
         width: 95%;
         justify-content: space-between;
         padding: 0 5% 0;
+        height: 55px;
+        border-left: 0;
+        border-right: 0; 
     }
     .tabClicked {
         color: inherit;
         background-color: inherit;
+        border-bottom: none; 
     }
     .fitGuide, .care, .materials {
         width: 90%;
@@ -89,11 +103,15 @@ li > div {
         overflow: hidden;
         display: block;
         transition: max-height 0.3s ease-out;
+        font-size: 18px;
+    }
+    .percentages {
+        margin-top: 10px;
     }
     .showInfo{
         order: inherit;
         max-height: 500px;
-        padding: 2.5% 0;
+        padding-bottom: 5%;
     }
     .tab:after {
         content: '+';
