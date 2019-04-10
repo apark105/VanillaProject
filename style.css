@@ -31,8 +31,6 @@ body {
     position: relative;
 }
 
-.header__tab:nth-of-type(1), 
-
 .header__tab--clicked {
     color:white;
     background-color: black; 
@@ -42,13 +40,18 @@ body {
     display: none;
     text-align: center;
     padding-top: 40px;
-    font-size: 14px;    
-    width: 668px;
+    font-size: 12px;    
     position: absolute;
-    top: 117px;
-    line-height: 1.18;
+    width: 670px;
+    top: 124px;
+    line-height: 1.4;
 }
 
+.header__info:nth-of-type(6) {
+    width: 670px;
+    top: 116px;
+    line-height: 1.18;
+}
 .header__info--clicked {
     display: block;
     /* order: 1; */
@@ -57,7 +60,7 @@ body {
 .percentages__item {
     /* list-style-type: none; */
     list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=);
-    width: 160px;
+    width: 158px;
     font-size: 50px;
     margin: 0;
     text-align: center;
@@ -80,8 +83,8 @@ body {
 .header__dash {
     width: 45px;
     border-top: 1px solid black;
-    margin: 24px auto;
-    padding-bottom: 4px;
+    margin: 25px auto;
+    padding-bottom: 7px;
 }
 
 /* For mobile phones: */
@@ -90,10 +93,11 @@ body {
         padding: 0;
     }
     .header__tab {
-        width: 95%;
+        width: 100%;
         justify-content: space-between;
-        padding: 0 5% 0;
-        height: 55px;
+        padding-left: 25px;
+        left: 0;
+        height: 57px;
         border-left: 0;
         border-right: 0; 
     }
@@ -116,8 +120,19 @@ body {
         position: relative;
         top: 0;
     }
-    .percentages {
-        margin-top: 10px;
+    .header__info:nth-of-type(6) {
+        top:0;
+        width: 90%;
+    }
+    .percentages{
+        justify-content: space-around;
+    }
+    .percentages__item {
+        font-size:45px;
+        width: auto;
+    }
+    .percentages__name{
+        font-size:18px;
     }
     .header__info--clicked {
         order: inherit;
@@ -126,8 +141,14 @@ body {
     }
     .header__tab:after {
         content: '+';
+        padding: 0px 8px 5px 0;
     }
     .header__tab--clicked:after {
         content: "-";
+    }
+    .header__dash {
+        width: 56px;
+        margin: 25px auto;
+        padding-bottom: 0;
     }
   }
