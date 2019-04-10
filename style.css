@@ -3,20 +3,21 @@ body {
     width: 100vw;
     overflow-x: hidden;
     height: 100vh;
+    font-family: 'Open Sans';
 }
 
-.headers {
+.header {
     width: 100%; 
     height: 15%;
-    padding: 5.25% 0 3% 0;
+    padding: 75.25px 0 0 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.tab {
+.header__tab {
     width: 180px;
-    height: 37px;
+    height: 36px;
     border: 1px solid black;
     display: flex;
     align-items: center;
@@ -26,42 +27,47 @@ body {
     letter-spacing: 2.2px;
     font-family: 'Open Sans';
     font-size: 18.5px;
+    left: 5px;
+    position: relative;
 }
 
-.tabClicked {
+.header__tab--clicked {
     color:white;
     background-color: black; 
 }
 
-.fitGuide, .care, .materials {
+.header__info {
     display: none;
-    width: 60%;
     text-align: center;
-    padding: 2.9% 26% 2.5% 26%;
-    font-size: 16px;
+    padding-top: 40px;
+    font-size: 12px;    
+    position: absolute;
+    width: 670px;
+    top: 124px;
+    line-height: 1.4;
 }
 
-.fitGuide, .care {
-    padding: 3.9% 26% 2.5% 26%;
-
+.header__info:nth-of-type(6) {
+    width: 670px;
+    top: 116px;
+    line-height: 1.18;
 }
-
-.showInfo {
+.header__info--clicked {
     display: block;
-    order: 1;
+    /* order: 1; */
 }
 
-li {
+.percentages__item {
     /* list-style-type: none; */
     list-style-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=);
-    width: 157px;
-    font-size: 3.27rem;
+    width: 158px;
+    font-size: 50px;
     margin: 0;
     text-align: center;
 }
 
-li > div {
-    font-size: 1.5rem;
+.percentages__name {
+    font-size: 22px;
 }
 
 .percentages {
@@ -70,57 +76,79 @@ li > div {
     align-items: center; 
     flex-direction: row;
     padding: 0;
-    line-height: 0.95;
+    /* line-height: 0.95; */
+    margin: 0;
 }
 
-.dash {
-    width: 55px;
-    margin: 25px auto;
+.header__dash {
+    width: 45px;
     border-top: 1px solid black;
+    margin: 25px auto;
+    padding-bottom: 7px;
 }
 
 /* For mobile phones: */
 @media only screen and (max-width: 768px) {
-    .headers{
+    .header {
         padding: 0;
     }
-    .tab {
-        width: 95%;
+    .header__tab {
+        width: 100%;
         justify-content: space-between;
-        padding: 0 5% 0;
-        height: 55px;
+        padding-left: 25px;
+        left: 0;
+        height: 57px;
         border-left: 0;
         border-right: 0; 
     }
-    .tab:nth-of-type(1), .tab:nth-of-type(3) {
+    .header__tab:nth-of-type(1), .header__tab:nth-of-type(3) {
         border-bottom: none; 
     } 
-    .tabClicked {
+    .header__tab--clicked {
         border-bottom: none; 
         color: inherit;
         background-color: inherit;
     }
-    .fitGuide, .care, .materials {
+    .header__info {
         width: 90%;
         max-height: 0;
         padding: 0;
         overflow: hidden;
         display: block;
         transition: max-height 0.3s ease-out;
-        font-size: 18px;
+        font-size: 16px;
+        position: relative;
+        top: 0;
     }
-    .percentages {
-        margin-top: 10px;
+    .header__info:nth-of-type(6) {
+        top:0;
+        width: 90%;
     }
-    .showInfo{
+    .percentages{
+        justify-content: space-around;
+    }
+    .percentages__item {
+        font-size:45px;
+        width: auto;
+    }
+    .percentages__name{
+        font-size:18px;
+    }
+    .header__info--clicked {
         order: inherit;
         max-height: 500px;
         padding-bottom: 5%;
     }
-    .tab:after {
+    .header__tab:after {
         content: '+';
+        padding: 0px 8px 5px 0;
     }
-    .tabClicked:after {
+    .header__tab--clicked:after {
         content: "-";
+    }
+    .header__dash {
+        width: 56px;
+        margin: 25px auto;
+        padding-bottom: 0;
     }
   }

@@ -9,7 +9,7 @@ function Tab() {
    * function selects and attaches click handlers to all tabs
    */
   this.init = function () {
-    var tab = document.querySelectorAll(".tab");
+    var tab = document.querySelectorAll(".header__tab");
     for (var i = 0; i < tab.length; i++) {
       tab[i].addEventListener("click", _this.toggleTab);
     }
@@ -20,12 +20,12 @@ function Tab() {
   this.toggleTab = function () {
     _this.closeTab();
     var currentTab = event.target;
-    currentTab.classList.add("tabClicked");
-    _this.showInfo(currentTab.id);
+    currentTab.classList.add("header__tab--clicked");
+    _this.showInfo(currentTab.getAttribute("info"));
 
     if(currentTab.id === flag){
-      removeTab.classList.remove("tabClicked");
-      removeInfo.classList.remove("showInfo");
+      removeTab.classList.remove("header__tab--clicked");
+      removeInfo.classList.remove("header__info--clicked");
       flag = null;
       return;
     }
@@ -36,18 +36,18 @@ function Tab() {
    * @param {string} currentTab - name of the tab clicked
    */
   this.showInfo = function (currentTab) {
-    var info = document.getElementsByClassName(currentTab)[0];
-    info.classList.add('showInfo');
+    var info = document.querySelectorAll(`div[info = "${currentTab}"]`)[1]
+    info.classList.add('header__info--clicked');
   },
   /**
    * function closes previously opened tab 
    */
   this.closeTab = function () {
-    removeTab = document.querySelectorAll('.tabClicked')[0];
-    removeInfo = document.querySelectorAll('.showInfo')[0];
+    removeTab = document.querySelectorAll('.header__tab--clicked')[0];
+    removeInfo = document.querySelectorAll('.header__info--clicked')[0];
     if (removeTab) {
-      removeTab.classList.remove("tabClicked");
-      removeInfo.classList.remove("showInfo");
+      removeTab.classList.remove("header__tab--clicked");
+      removeInfo.classList.remove("header__info--clicked");
     }
   };
 }
